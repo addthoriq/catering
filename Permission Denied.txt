@@ -1,0 +1,3 @@
+Permission Denied fo move_upload php
+
+chmod -R 777 direction
