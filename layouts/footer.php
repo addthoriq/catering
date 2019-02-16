@@ -1,11 +1,13 @@
-    <footer id="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="block">
-                        <p>Copyright &copy; 2019 - All Rights Reserved.Design and Developed By <a href="http://www.facebook.com/alvarro.thoriq">Thoriq Ramadhan</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- START FOOTER -->
+<footer class="page-footer gradient-45deg-red-pink">
+    <div class="footer-copyright">
+      <div class="container">
+        <span>Copyright ©
+          <script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script> <a class="grey-text text-lighten-2" href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">Thoriq Ramadhan</a> All rights reserved.</span>
+        <span class="right hide-on-small-only"> Design and Developed by <a class="grey-text text-lighten-2" href="https://thoriq.com/">Thoriq Ramadhan</a></span>
+      </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
