@@ -58,63 +58,33 @@ if (isset($_SESSION['emailusr'])) {
         <!--card stats start-->
         <div id="card-stats">
           <div class="row mt-1">
-            <div class="col s12 m6 l3">
-              <div class="card gradient-45deg-light-blue-cyan gradient-shadow min-height-100 white-text">
-                <div class="padding-4">
-                  <div class="col s7 m7">
-                    <i class="material-icons background-round mt-5">add_shopping_cart</i>
-                    <p>Orders</p>
-                  </div>
-                  <div class="col s5 m5 right-align">
-                    <h5 class="mb-0">690</h5>
-                    <p class="no-margin">New</p>
-                    <p>6,00,00</p>
-                  </div>
+            <div class="col s12 m6 l6">
+              <div class="card small">
+                <div class="card-image">
+                  <img src="../images/blog/blog-img-3.jpg" alt="sample">
+                  <span class="card-title">Paket Katering untuk Acara</span>
+                </div>
+                <div class="card-content">
+                  <p>Segera dapatkan paket Katering untuk acara-acara besarmu</p>
+                </div>
+                <div class="card-action">
+                  <a href="orderacara/index.php">Segera Pesan !</a>
+                  <a href="menuacr/index.php">Lihat pilihan Menunya</a>
                 </div>
               </div>
             </div>
-            <div class="col s12 m6 l3">
-              <div class="card gradient-45deg-red-pink gradient-shadow min-height-100 white-text">
-                <div class="padding-4">
-                  <div class="col s7 m7">
-                    <i class="material-icons background-round mt-5">perm_identity</i>
-                    <p>Clients</p>
-                  </div>
-                  <div class="col s5 m5 right-align">
-                    <h5 class="mb-0">1885</h5>
-                    <p class="no-margin">New</p>
-                    <p>1,12,900</p>
-                  </div>
+            <div class="col s12 m6 l6">
+              <div class="card small">
+                <div class="card-image">
+                  <img src="../images/blog/blog-img-4.jpg" alt="sample">
+                  <span class="card-title">Paket Katering untuk Langganan</span>
                 </div>
-              </div>
-            </div>
-            <div class="col s12 m6 l3">
-              <div class="card gradient-45deg-amber-amber gradient-shadow min-height-100 white-text">
-                <div class="padding-4">
-                  <div class="col s7 m7">
-                    <i class="material-icons background-round mt-5">timeline</i>
-                    <p>Sales</p>
-                  </div>
-                  <div class="col s5 m5 right-align">
-                    <h5 class="mb-0">80%</h5>
-                    <p class="no-margin">Growth</p>
-                    <p>3,42,230</p>
-                  </div>
+                <div class="card-content">
+                  <p>Paket Katering Langganan diperuntukkan bagi anda yang tidak mau repot-repot memasak setiap waktu</p>
                 </div>
-              </div>
-            </div>
-            <div class="col s12 m6 l3">
-              <div class="card gradient-45deg-green-teal gradient-shadow min-height-100 white-text">
-                <div class="padding-4">
-                  <div class="col s7 m7">
-                    <i class="material-icons background-round mt-5">attach_money</i>
-                    <p>Profit</p>
-                  </div>
-                  <div class="col s5 m5 right-align">
-                    <h5 class="mb-0">$890</h5>
-                    <p class="no-margin">Today</p>
-                    <p>$25,000</p>
-                  </div>
+                <div class="card-action">
+                  <a href="orderlangganan">Segera Pesan !</a>
+                  <a href="menulangg/index.php">Lihat pilihan Menunya</a>
                 </div>
               </div>
             </div>

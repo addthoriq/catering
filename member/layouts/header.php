@@ -20,7 +20,7 @@ if (!$konek) {
     <header id="header" class="page-topbar">
       <!-- start header nav-->
       <div class="navbar-fixed">
-        <nav class="navbar-color gradient-45deg-indigo-blue">
+        <nav class="navbar-color gradient-45deg-red-pink">
           <div class="nav-wrapper">
             <ul class="left">
               <li>
