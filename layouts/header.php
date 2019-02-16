@@ -24,12 +24,12 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
+                <a href="http://localhost/ilma/menuacr/index.php" class="waves-effect waves-block waves-light">
                   Katering Acara
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
+                <a href="http://localhost/ilma/menulangg/index.php" class="waves-effect waves-block waves-light">
                   Paket Langganan
                 </a>
               </li>
