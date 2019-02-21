@@ -2,8 +2,33 @@
 session_start();
 include 'koneksi.php';
 
+//on register.php
+$nama	  = $_POST['nama'];
+$email	= $_POST['email'];
+$hp     = $_POST['hp'];
+$pass	  = md5($_POST['pass']);
+// $alamat =
+
+//on databases
+$jkl  = $_POST['jkl'];
+$stt 	= 1;
+$tgl 	= date('Y-m-d');
+$role	= 5;
+
+//Avatar
+if ($jkl==1) {
+  $gambar = "male.png";
+}else {
+  $gambar = "female.png";
+};
+
+$skl  = "INSERT INTO user (nama, hp, email, jkl, password, foto, status, tanggal, role_id) VALUES ('$nama', '$hp', '$email', $jkl, '$pass', '$gambar', $stt, '$tgl', $role)";
+
+mysqli_query($konek, $skl);
+
+
 $email 	= $_POST['email'];
-$pass 	= $_POST['password'];
+$pass 	= md5($_POST['pass']);
 
 $sql1 	= "SELECT * FROM op WHERE email = '$email' AND password = '$pass'";
 $qry1	= mysqli_query($konek, $sql1);
@@ -47,8 +72,14 @@ if (!empty($email) && !empty($pass)) {
 		$_SESSION['passusr']	= $row3['password'];
 		$_SESSION['alamatusr'] = $row3['alamat'];
 		$_SESSION['hpusr']		= $row3['hp'];
+    $_SESSION['jklusr']   = $row3['jkl'];
+    $_SESSION['roleusr']     = $row3['role_id'];
 
-		header('location: ../member/index.php');
+    if ($row3['status']==1) {
+			header('location: ../member/index.php');
+		}else{
+			echo "Akun Anda Tidak Aktif";
+		};
 	}else{
 		echo "Email anda Salah";
 	}

@@ -2,28 +2,34 @@
 session_start();
 include '../../config/koneksi.php';
 
-$id 	= $_POST['id'];
-$nama	= $_SESSION['namaadm'];
-$email	= $_SESSION['emailadm'];
-$pass	= $_POST['pass'];
+$id 		= $_POST['id'];
+$nama		= $_POST['nama'];
+$email	= $_POST['email'];
+$pass		= md5($_POST['pass']);
+$hp 		= $_POST['hp'];
+$alamat = $_POST['alamat'];
+$jkl 		= $_SESSION['jklusr'];
+$stt 		= 1;
+$role		= $_SESSION['roleusr'];
 
-$skl 			= "SELECT * FROM admin WHERE id = '$id'";
+$skl 			= "SELECT * FROM user WHERE id = '$id'";
 $qrr 			= mysqli_query($konek, $skl);
 $wow 			= mysqli_fetch_row($qrr);
-$hapus			= $wow[4];
-$sandi			= $wow[3];
-$del			= "http://localhost/ilma/admin/avatar/".$hapus;
+$hapus		= $wow[7];
+$sandi		= $wow[6];
+$tgl 			= $wow[9];
+$del			= "http://localhost/ilma/member/avatar/".$hapus;
 
 // Upload Avatar
 $nama_gambar	= $_FILES['gambar']['name'];
-$tmp_name		= $_FILES['gambar']['tmp_name'];
+$tmp_name			= $_FILES['gambar']['tmp_name'];
 
 if (empty($nama_gambar)) {
 	$nama_gambar	= $hapus;
-	$gambar			= $nama_gambar;
+	$gambar				= $nama_gambar;
 } else {
 	//move and rename
-	$acak			= rand(1111111, 9999999).".jpg";
+	$acak				= rand(1111111, 9999999).".jpg";
 	$gambar			= str_replace($nama_gambar, $acak, $nama_gambar);
 	move_uploaded_file($tmp_name, "../avatar/".$gambar);
 }
@@ -32,10 +38,11 @@ if (empty($nama_gambar)) {
 if (empty($pass)) {
 	$pass 		= $sandi;
 } else {
-	$pass		= $_POST['pass'];
+	$pass		= md5($_POST['pass']);
 }
 
 
-$sql	= "UPDATE admin SET nama = '$nama', email = '$email', password = '$pass', poto = '$gambar' WHERE id = '$id'";
+$sql	= "UPDATE user SET nama = '$nama', alamat = '$alamat', hp = '$hp', email = '$email', jkl = '$jkl', password = '$pass', foto = '$gambar', status = $stt, tanggal = '$tgl', role_id = '$role' WHERE id = '$id'";
 mysqli_query($konek, $sql);
-header('location: index.php?id='.$id);
+exit();
+// header('location: index.php?id='.$id);

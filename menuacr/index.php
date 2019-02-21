@@ -74,7 +74,7 @@
                   <p>Rp 18.000/hari</p>
                 </div>
                 <div class="card-action">
-                  <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
+                  <a href="bakso.php" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
                 </div>
               </div>
             </div>

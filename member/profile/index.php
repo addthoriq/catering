@@ -78,11 +78,11 @@ if (isset($_SESSION['emailusr'])) {
                     include '../../config/koneksi.php';
 
                     $id   = $_GET['id'];
-                    $sql  = "SELECT * FROM admin WHERE id = '$id'";
+                    $sql  = "SELECT * FROM user WHERE id = '$id'";
                     $res  = mysqli_query($konek, $sql);
                     $row  = mysqli_fetch_assoc($res);
 
-                    $ava  = "http://localhost/ilma/admin/avatar/".$row['poto'];
+                    $ava  = "http://localhost/ilma/member/avatar/".$row['foto'];
                     ?>
                     <div class="row">
                       <div class="input-field col s12">
@@ -101,25 +101,42 @@ if (isset($_SESSION['emailusr'])) {
                           <input type="file" name="gambar">
                         </div>
                         <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text" value="<?= $row['poto'] ?>">
+                          <input class="file-path validate" type="text" readonly>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <input id="name" type="text" name="nama" value="<?= $row['nama'] ?>">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" name="nama" value="<?= $row['nama'] ?>" class="validate">
                         <label for="name">Nama</label>
                       </div>
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <input id="email" type="email" name="email" value="<?= $row['email'] ?>">
+                        <i class="material-icons prefix">place</i>
+                        <textarea id="message4" class="materialize-textarea validate" length="120" name="alamat"><?= $row['alamat'] ?></textarea>
+                        <label for="message">Alamat</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <i class="material-icons prefix">phone_iphone</i>
+                        <input id="hp" type="text" name="hp" value="<?= $row['hp'] ?>" class="validate">
+                        <label for="name">Nomor HP</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" name="email" value="<?= $row['email'] ?>" class="validate">
                         <label for="email">Email</label>
                       </div>
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <input id="pass" type="password" name="pass">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="pass" type="password" name="pass" class="validate">
                         <label for="pass">Password</label>
                       </div>
                     </div>

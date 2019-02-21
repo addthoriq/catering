@@ -14,7 +14,7 @@ if (!$konek) {
   $res  = mysqli_query($konek, $sql);
   $row  = mysqli_fetch_assoc($res);
 
-  $ava  = "http://localhost/ilma/admin/avatar/".$row['foto'];
+  $ava  = "http://localhost/ilma/member/avatar/".$row['foto'];
 
 ?>
 <!-- START LEFT SIDEBAR NAV-->
@@ -28,7 +28,7 @@ if (!$konek) {
                     <div class="col col s8 m8 l8">
                       <ul id="profile-dropdown-nav" class="dropdown-content">
                         <li>
-                          <a href="http://localhost/ilma/admin/profile/index.php?id=<?= $_SESSION['idadm'] ?>" class="grey-text text-darken-1">
+                          <a href="http://localhost/ilma/member/profile/index.php?id=<?= $_SESSION['idadm'] ?>" class="grey-text text-darken-1">
                             <i class="material-icons">face</i> Profile</a>
                         </li>
                         <li>
@@ -45,7 +45,7 @@ if (!$konek) {
                             <i class="material-icons">lock_outline</i> Lock</a>
                         </li>
                         <li>
-                          <a href="http://localhost/ilma/admin/logout.php" class="grey-text text-darken-1">
+                          <a href="http://localhost/ilma/member/logout.php" class="grey-text text-darken-1">
                             <i class="material-icons">keyboard_tab</i> Logout</a>
                         </li>
                       </ul>
@@ -66,31 +66,31 @@ if (!$konek) {
             <li class="no-padding">
               <ul class="collapsible" data-collapsible="accordion">
                 <li class="bold active">
-                  <a href="http://localhost/ilma/admin/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">donut_small</i>
                       <span class="nav-text">Beranda</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/katering/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/katering/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Katering Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/langganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/langganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Langganan</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderacara/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderacara/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderlangganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderlangganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Langganan</span>
                     </a>
@@ -105,31 +105,31 @@ if (!$konek) {
             <li class="no-padding">
               <ul class="collapsible" data-collapsible="accordion">
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">donut_large</i>
                       <span class="nav-text">Beranda</span>
                     </a>
                 </li>
                 <li class="bold active">
-                  <a href="http://localhost/ilma/admin/katering/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/katering/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">room_service</i>
                       <span class="nav-text">Menu Katering Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/langganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/langganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Langganan</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderacara/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderacara/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderlangganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderlangganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Langganan</span>
                     </a>
@@ -144,31 +144,31 @@ if (!$konek) {
             <li class="no-padding">
               <ul class="collapsible" data-collapsible="accordion">
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">donut_large</i>
                       <span class="nav-text">Beranda</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/katering/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/katering/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Katering Acara</span>
                     </a>
                 </li>
                 <li class="bold active">
-                  <a href="http://localhost/ilma/admin/langganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/langganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">room_service</i>
                       <span class="nav-text">Menu Langganan</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderacara/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderacara/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderlangganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderlangganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Langganan</span>
                     </a>
@@ -183,31 +183,31 @@ if (!$konek) {
             <li class="no-padding">
               <ul class="collapsible" data-collapsible="accordion">
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">donut_large</i>
                       <span class="nav-text">Beranda</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/katering/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/katering/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Katering Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/langganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/langganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Langganan</span>
                     </a>
                 </li>
                 <li class="bold active">
-                  <a href="http://localhost/ilma/admin/orderacara/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderacara/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">shopping_cart</i>
                       <span class="nav-text">Pesanan Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderlangganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderlangganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Langganan</span>
                     </a>
@@ -221,31 +221,31 @@ if (!$konek) {
             <li class="no-padding">
               <ul class="collapsible" data-collapsible="accordion">
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">donut_large</i>
                       <span class="nav-text">Beranda</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/katering/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/katering/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Katering Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/langganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/langganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Langganan</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderacara/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderacara/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Acara</span>
                     </a>
                 </li>
                 <li class="bold active">
-                  <a href="http://localhost/ilma/admin/orderlangganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderlangganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">shopping_cart</i>
                       <span class="nav-text">Pesanan Langganan</span>
                     </a>
@@ -258,31 +258,31 @@ if (!$konek) {
             <li class="no-padding">
               <ul class="collapsible" data-collapsible="accordion">
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">donut_large</i>
                       <span class="nav-text">Beranda</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/katering/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/katering/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Katering Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/langganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/langganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">kitchen</i>
                       <span class="nav-text">Menu Langganan</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderacara/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderacara/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Acara</span>
                     </a>
                 </li>
                 <li class="bold">
-                  <a href="http://localhost/ilma/admin/orderlangganan/index.php" class="waves-effect waves-cyan">
+                  <a href="http://localhost/ilma/member/orderlangganan/index.php" class="waves-effect waves-cyan">
                       <i class="material-icons">add_shopping_cart</i>
                       <span class="nav-text">Pesanan Langganan</span>
                     </a>

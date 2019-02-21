@@ -14,8 +14,8 @@ if (!$konek) {
   $res  = mysqli_query($konek, $sql);
   $row  = mysqli_fetch_assoc($res);
 
-  $ava  = "http://localhost/ilma/admin/avatar/".$row['foto'];
-?> 
+  $ava  = "http://localhost/ilma/member/avatar/".$row['foto'];
+?>
     <!-- START HEADER -->
     <header id="header" class="page-topbar">
       <!-- start header nav-->
@@ -25,8 +25,8 @@ if (!$konek) {
             <ul class="left">
               <li>
                 <h1 class="logo-wrapper">
-                  <a href="http://localhost/ilma/admin/index.php" class="brand-logo darken-1">
-                    <img src="http://localhost/ilma/admin/adminmt/images/logo/materialize-logo.png" alt="materialize logo">
+                  <a href="http://localhost/ilma/member/index.php" class="brand-logo darken-1">
+                    <img src="http://localhost/ilma/member/adminmt/images/logo/materialize-logo.png" alt="materialize logo">
                     <span class="logo-text hide-on-med-and-down">Ilma Catering Online Samarinda</span>
                   </a>
                 </h1>
@@ -116,7 +116,7 @@ if (!$konek) {
             <!-- profile-dropdown -->
             <ul id="profile-dropdown" class="dropdown-content">
               <li>
-                <a href="http://localhost/ilma/admin/profile/index.php?id=<?= $id ?>" class="grey-text text-darken-1"><i class="material-icons">face</i> Profile</a>
+                <a href="http://localhost/ilma/member/profile/index.php?id=<?= $id ?>" class="grey-text text-darken-1"><i class="material-icons">face</i> Profile</a>
               </li>
               <li>
                 <a href="#" class="grey-text text-darken-1">
@@ -132,7 +132,7 @@ if (!$konek) {
                   <i class="material-icons">lock_outline</i> Lock</a>
               </li>
               <li>
-                <a href="http://localhost/ilma/admin/logout.php" class="grey-text text-darken-1">
+                <a href="http://localhost/ilma/member/logout.php" class="grey-text text-darken-1">
                   <i class="material-icons">keyboard_tab</i> Logout</a>
               </li>
             </ul>

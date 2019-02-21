@@ -103,7 +103,7 @@ if (isset($_SESSION['emailadm'])) {
                         <label for="harga">Harga</label>
                       </div>
                     </div>
-                     <p>
+                    <p>
                        <input class="with-gap" id="ada" type="radio" name="status" value="1" required/>
                        <label for="ada">Tersedia</label>
                     </p>

@@ -1,6 +1,6 @@
 <?php
   $ava  = "http://www.stickpng.com/assets/images/585e4bf3cb11b227491c339a.png";
-?> 
+?>
     <!-- START HEADER -->
     <header id="header" class="page-topbar">
       <!-- start header nav-->
@@ -10,7 +10,7 @@
             <ul class="left">
               <li>
                 <h1 class="logo-wrapper">
-                  <a href="http://localhost/ilma/admin/index.php" class="brand-logo darken-1">
+                  <a href="http://localhost/ilma/index.php" class="brand-logo darken-1">
                     <img src="http://localhost/ilma/admin/adminmt/images/logo/materialize-logo.png" alt="materialize logo">
                     <span class="logo-text hide-on-med-and-down">Ilma Catering Online Samarinda</span>
                   </a>
@@ -35,9 +35,7 @@
               </li>
               <li>
                 <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
-                  <span class="avatar-status avatar-online">
-                    <img src="<?= $ava ?>" alt="avatar" width="28px">
-                  </span>
+                    <a href="http://localhost/ilma/member.php">Masuk</a>                  
                 </a>
               </li>
               <li>
@@ -59,16 +57,6 @@
               <li>
                 <a href="#!" class="grey-text text-darken-1">
                   <i class="flag-icon flag-icon-sa"></i> العربية</a>
-              </li>
-            </ul>
-            <!-- profile-dropdown -->
-            <ul id="profile-dropdown" class="dropdown-content">
-              <li>
-                <a href="http://localhost/ilma/admin/profile/index.php?id=<?= $id ?>" class="grey-text text-darken-1"><i class="material-icons">face</i> Masuk</a>
-              </li>
-              <li>
-                <a href="#" class="grey-text text-darken-1">
-                  <i class="material-icons">settings</i> Daftar</a>
               </li>
             </ul>
           </div>
