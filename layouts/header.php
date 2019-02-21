@@ -35,7 +35,7 @@
               </li>
               <li>
                 <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
-                    <a href="http://localhost/ilma/member.php">Masuk</a>                  
+                    <a href="http://localhost/ilma/member.php">Masuk</a>
                 </a>
               </li>
               <li>
