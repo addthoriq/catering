@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 15, 2019 at 07:14 PM
+-- Generation Time: Feb 27, 2019 at 01:33 PM
 -- Server version: 5.7.25-0ubuntu0.16.04.2
 -- PHP Version: 7.2.15-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -45,21 +45,24 @@ CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `poto` varchar(100) DEFAULT NULL,
   `status` tinyint(1) NOT NULL,
   `tanggal` date NOT NULL,
-  `role_id` int(11) NOT NULL
+  `role_id` int(11) NOT NULL,
+  `jkl` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `nama`, `email`, `password`, `poto`, `status`, `tanggal`, `role_id`) VALUES
-(6, 'Sari', 'sr@admin.com', '12345', '5046580.jpg', 1, '2019-02-12', 2),
-(7, 'Itah', 'itah@adm.com', '12345', '3175635.jpg', 1, '2019-02-12', 2),
-(8, 'Fitri', 'ftr@adm.com', '123', '4410958.jpg', 1, '2019-02-12', 2);
+INSERT INTO `admin` (`id`, `nama`, `email`, `password`, `poto`, `status`, `tanggal`, `role_id`, `jkl`) VALUES
+(6, 'Sari', 'sr@admin.com', '202cb962ac59075b964b07152d234b70', '5046580.jpg', 1, '2019-02-12', 2, 0),
+(7, 'Itah', 'itah@adm.com', '12345', '3175635.jpg', 1, '2019-02-12', 2, 0),
+(8, 'Fitri', 'ftr@adm.com', '123', '4410958.jpg', 1, '2019-02-12', 2, 0),
+(9, 'Kangfoo', 'kf@admin.com', '202cb962ac59075b964b07152d234b70', '', 1, '2019-02-27', 2, 1),
+(10, 'Yamsah', 'tuni@admin.com', '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-27', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -92,6 +95,15 @@ CREATE TABLE `menuacr` (
   `foto` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `menuacr`
+--
+
+INSERT INTO `menuacr` (`id`, `nama`, `harga`, `status`, `admin_id`, `tanggal`, `foto`) VALUES
+(1, 'Bakso', '8000', 1, 6, '2019-02-25', '5787918.jpg'),
+(2, 'Soto Banjar', '14000', 1, 6, '2019-02-25', '7578976.jpg'),
+(3, 'Nasi Rawon', '15000', 0, 6, '2019-02-25', '1907255.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -118,7 +130,7 @@ CREATE TABLE `op` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `foto` varchar(60) DEFAULT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -128,7 +140,7 @@ CREATE TABLE `op` (
 --
 
 INSERT INTO `op` (`id`, `nama`, `email`, `password`, `foto`, `role_id`) VALUES
-(1, 'Ahmad Thoriq 1', 'op@op.com', '123', '1803530.jpg', 1);
+(1, 'Ahmad Thoriq 1', 'op@op.com', '202cb962ac59075b964b07152d234b70', '1803530.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -176,10 +188,11 @@ INSERT INTO `role` (`id`, `nama`) VALUES
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `alamat` text NOT NULL,
+  `alamat` text,
   `hp` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `jkl` tinyint(1) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `foto` varchar(80) DEFAULT NULL,
   `status` tinyint(1) NOT NULL,
   `tanggal` date NOT NULL,
@@ -190,8 +203,35 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `nama`, `alamat`, `hp`, `email`, `password`, `foto`, `status`, `tanggal`, `role_id`) VALUES
-(1, 'Jaenab', 'Glinggangsari, RT.07/RW.12, Tanjungsari, Banyudono, Kabupaten Boyolali, Jawa Tengah 57373', '085713793888', 'jaenab@gmail.com', '123', '1722145.jpg', 1, '2019-02-12', 3);
+INSERT INTO `user` (`id`, `nama`, `alamat`, `hp`, `email`, `jkl`, `password`, `foto`, `status`, `tanggal`, `role_id`) VALUES
+(1, 'Jaenab', 'Glinggangsari, RT.07/RW.12, Tanjungsari, Banyudono, Kabupaten Boyolali, Jawa Tengah 57373', '085713793888', 'jaenab@gmail.com', 0, '123', '1722145.jpg', 1, '2019-02-12', 3),
+(2, 'Thoriq', NULL, '0812354366', 'thoriq@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(3, 'Abid Khairy', NULL, '081233543646', 'abid@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(4, 'Saphira', 'JL. jalan yukkkk', '08123435212', 'safr@gmail.com', 0, '202cb962ac59075b964b07152d234b70', 'female.png', 1, '2019-02-20', 5),
+(5, 'Ahmad', NULL, '081234325346', 'ahmad@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(6, 'Rizqy', NULL, '0812334353464', 'rzq@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(7, 'Sulaiman', NULL, '0812324421412', 'slm@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(8, 'Sulaiman', NULL, '0812324421412', 'slm@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(9, 'ipul', NULL, '08123435436', 'ipl@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(10, 'ipul', NULL, '08123435436', 'ipl@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(11, 'tama', NULL, '08123242341', 'tama@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(12, 'tama', NULL, '08123242341', 'tama@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(13, 'Kumat', NULL, '08921414124', 'kmt@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(14, 'Kumat', NULL, '08921414124', 'kmt@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(15, 'Heru', NULL, '081242343124', 'hr@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(16, 'kurni', NULL, '0812412251', 'krn@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(17, 'kurni', NULL, '0812412251', 'krn@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(18, 'irham', NULL, '05325511244', 'irham@mbr.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-20', 5),
+(19, 'Anisah', 'JL. jalan kuy', '088887524', 'nisah@gmail.com', 0, 'd41d8cd98f00b204e9800998ecf8427e', 'female.png', 1, '2019-02-21', 5),
+(20, 'coba coba', 'Jl. in aja yuk', '084263567746', 'coba@gmail.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5),
+(21, 'apa', NULL, '0937483248', 'apa@gm.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5),
+(22, 'ana', NULL, '086545244323', 'ana@gm.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5),
+(23, 'ojan', NULL, '078748372489', 'ojan@gm.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5),
+(24, 'dsffwe', NULL, '08989573872', 'aa@gg.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5),
+(25, 'sr', 'jkls', '0898974823748', 'sr@mbr.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5),
+(26, 'tuni', NULL, '09899353957893', '', 1, '123', 'male.png', 1, '2019-02-25', 5),
+(27, 'fak', NULL, '098989239', '', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5),
+(28, 'fak', NULL, '098989239', 'fak@mbr.com', 1, '202cb962ac59075b964b07152d234b70', 'male.png', 1, '2019-02-25', 5);
 
 --
 -- Indexes for dumped tables
@@ -274,7 +314,7 @@ ALTER TABLE `acara`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `langganan`
 --
@@ -284,7 +324,7 @@ ALTER TABLE `langganan`
 -- AUTO_INCREMENT for table `menuacr`
 --
 ALTER TABLE `menuacr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `menulangg`
 --
@@ -304,7 +344,7 @@ ALTER TABLE `pemesan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

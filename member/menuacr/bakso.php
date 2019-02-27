@@ -351,13 +351,6 @@
     </script>
     <script type="text/javascript">
      $(document).ready(function(){
-       M.updateTextFields();
-       $('.datepicker').datepicker({
-         format: 'ddd, dd mmm yyyy'.
-         setdefaultDate: true,
-         defaultDate: Date.now(),
-       });
-       $('select').formSelect();
 
        //Amount (box)
        $('.add-box').click(function(){
