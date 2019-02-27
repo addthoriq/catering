@@ -103,6 +103,14 @@ if (isset($_SESSION['emailop'])) {
                         <label for="pass">Password</label>
                       </div>
                     </div>
+                    <p>
+                       <input class="with-gap" id="lk" type="radio" name="jkl" value="1" required/>
+                       <label for="lk">Laki laki</label>
+                    </p>
+                    <p>
+                       <input class="with-gap" id="pr" type="radio" name="jkl" value="0" required/>
+                       <label for="pr">Perempuan</label>
+                    </p>
                     <div class="row">
                       <div class="input-field col s12">
                         <button class="btn waves-effect waves-light right" type="submit" name="action">Simpan
@@ -147,5 +155,5 @@ if (isset($_SESSION['emailop'])) {
 
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

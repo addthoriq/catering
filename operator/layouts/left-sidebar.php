@@ -214,7 +214,7 @@ if (!$konek) {
                 </li>
                 <li class="bold">
                   <a href="http://localhost/ilma/operator/member/index.php" class="waves-effect waves-cyan">
-                      <i class="material-icons">people</i>
+                      <i class="material-icons">people_outline</i>
                       <span class="nav-text">Akun Member</span>
                     </a>
                 </li>
@@ -259,7 +259,7 @@ if (!$konek) {
                 </li>
                 <li class="bold">
                   <a href="http://localhost/ilma/operator/member/index.php" class="waves-effect waves-cyan">
-                      <i class="material-icons">people</i>
+                      <i class="material-icons">people_outline</i>
                       <span class="nav-text">Akun Member</span>
                     </a>
                 </li>

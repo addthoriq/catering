@@ -149,5 +149,5 @@ if (isset($_SESSION['emailadm'])) {
 </html>
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

@@ -5,7 +5,7 @@ include '../../config/koneksi.php';
 $id 	= $_POST['id'];
 $nama	= $_SESSION['namaadm'];
 $email	= $_SESSION['emailadm'];
-$pass	= $_POST['pass'];
+$pass1	= $_POST['pass'];
 
 $skl 			= "SELECT * FROM admin WHERE id = '$id'";
 $qrr 			= mysqli_query($konek, $skl);
@@ -30,10 +30,10 @@ if (empty($nama_gambar)) {
 }
 
 //Percabangan jika mengubah sandi atau tidak
-if (empty($pass)) {
+if (empty($pass1)) {
 	$pass 		= $sandi;
 } else {
-	$pass		= $_POST['pass'];
+	$pass		= md5($_POST['pass']);
 }
 
 

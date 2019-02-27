@@ -82,8 +82,8 @@ if (isset($_SESSION['emailop'])) {
                           <th>Nomor</th>
                           <th>Nama</th>
                           <th>Email</th>
-                          <th>Password</th>
                           <th>Status</th>
+                          <th>Jenis Kelamin</th>
                           <th>Tanggal Update</th>
                           <th>Edit | Hapus</th>
                         </tr>
@@ -107,15 +107,22 @@ if (isset($_SESSION['emailop'])) {
                         return "Tidak Tersedia";
                       }
                     }
+                    function kelamin($m){
+                      if ($m == 1) {
+                        return "Pria";
+                      }else {
+                        return "Wanita";
+                      }
+                    }
                     if (mysqli_num_rows($res)>0) {
                       while ($row = mysqli_fetch_assoc($res)) {
                       ?>
                       <tr>
                         <td><?= $no++ ?></td>
                         <td><?= $row['nama']?></td>
-                        <td><?= $row['email'] ?></td>                    
-                        <td><?= $row['password']?></td>
+                        <td><?= $row['email'] ?></td>
                         <td><?= status($row['status']) ?></td>
+                        <td><?= kelamin($row['jkl']) ?></td>
                         <td><?= date('d F Y', strtotime($row['tanggal'])) ?></td>
                         <td>
                           <a class="btn-floating waves-effect waves-light pink lighten-1" href="edit.php?id=<?= $row['id'] ?>"><i class="material-icons left">settings_backup_restore</i> button</a>
@@ -173,5 +180,5 @@ if (isset($_SESSION['emailop'])) {
 
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

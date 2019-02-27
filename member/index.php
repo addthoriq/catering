@@ -82,120 +82,39 @@ if (isset($_SESSION['emailusr'])) {
                 </div>
               </div>
             </div>
-              <div class="row owl-carousel owl-theme">
-                <div class="col s12 m12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_bakso.jpg" alt="sample">
-                      <span class="card-title">Bakso</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 18.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="menuacr/bakso.php" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
+            <?php
+            include '../config/koneksi.php';
+            $sql    = "SELECT * FROM menuacr WHERE status = 1";
+            $res    = mysqli_query($konek, $sql);
+
+            function harga($m){
+              $rupiah = "Rp. ".number_format($m,0,",",".")."/hari";
+              return $rupiah;
+            }
+            if (mysqli_num_rows($res)>0) {
+              while ($row = mysqli_fetch_assoc($res)) {
+                $ava    = "http://localhost/ilma/img/".$row['foto'];
+            ?>
+            <div class="row owl-carousel owl-theme">
+              <div class="col s12 m12 item gradient-shadow">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="<?= $ava ?>" alt="sample">
+                    <span class="card-title"><?= $row['nama'] ?></span>
                   </div>
-                </div>
-                <div class="col s12 m12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_soto.jpg" alt="sample">
-                      <span class="card-title">Soto Banjar</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 12.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
+                  <div class="card-content">
+                    <p><?= harga($row['harga']) ?></p>
                   </div>
-                </div>
-                <div class="col s12 m12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_rawon.jpg" alt="sample">
-                      <span class="card-title">Rawon</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 15.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s12 m12 l12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_nasgor.jpg" alt="sample">
-                      <span class="card-title">Nasi Goreng</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 13.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s12 m12 l12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_ikan.jpg" alt="sample">
-                      <span class="card-title">Ikan Bakar</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 17.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s12 m12 l12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_ayam_bakar.jpg" alt="sample">
-                      <span class="card-title">Ayam Bakar</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 22.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s12 m12 l12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_ayam_goreng.jpg" alt="sample">
-                      <span class="card-title">Ayam Goreng</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 20.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s12 m12 l12 item gradient-shadow">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="../gambar/opac_nasik.jpg" alt="sample">
-                      <span class="card-title">Nasi Kuning</span>
-                    </div>
-                    <div class="card-content">
-                      <p>Rp 14.000/hari</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="#!" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
-                    </div>
+                  <div class="card-action">
+                    <a href="menuacr/bakso.php" class="waves-effect waves-light btn #ef5350 red lighten-1">Pesan Sekarang !</a>
                   </div>
                 </div>
               </div>
+            </div>
+            <?php
+              }
+            }
+            ?>
             <!-- //////////////////////////////////////////////////////////////////////////// -->
           </div>
           <div class="parallax-container">
@@ -257,7 +176,7 @@ if (isset($_SESSION['emailusr'])) {
                   items:3
               },
               1000:{
-                  items:5
+                  items:4
               }
           }
       })
@@ -271,5 +190,5 @@ if (isset($_SESSION['emailusr'])) {
 </html>
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

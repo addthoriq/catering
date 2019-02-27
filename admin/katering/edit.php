@@ -83,7 +83,7 @@ if (isset($_SESSION['emailadm'])) {
                     $sql  = "SELECT * FROM menuacr WHERE id = '$id'";
                     $res  = mysqli_query($konek, $sql);
                     $row  = mysqli_fetch_assoc($res);
-                    $ava  = "http://localhost/ilma/admin/img/".$row['foto'];
+                    $ava  = "http://localhost/ilma/img/".$row['foto'];
                     ?>
                     <div class="row">
                       <div class="input-field col s12">

@@ -119,7 +119,7 @@ if (isset($_SESSION['emailop'])) {
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <input id="pass" type="text" name="pass" value="<?= $row['password'] ?>">
+                        <input id="pass" type="text" name="pass">
                         <label for="pass">Password</label>
                       </div>
                     </div>
@@ -194,5 +194,5 @@ if (isset($_SESSION['emailop'])) {
 
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

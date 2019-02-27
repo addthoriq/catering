@@ -80,15 +80,15 @@
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">phone_iphone</i>
-                      <input id="email3" type="text" required class="validate" autocomplete="off" name="hp">
-                      <label for="email">Nomor Hp</label>
+                      <input id="hp" type="text" required class="validate" autocomplete="off" name="hp">
+                      <label for="hp">Nomor Hp</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">lock_outline</i>
-                      <input id="password3" type="password" required class="validate" autocomplete="off" name="pass">
-                      <label for="password">Password</label>
+                      <input id="password3" type="password" required class="validate" autocomplete="off" name="password">
+                      <label for="pass">Password</label>
                     </div>
                   </div>
                   <p>
@@ -108,7 +108,7 @@
                   </div>
                 </form>
 
-                <!-- LOGIN -->
+
                 <form class="col s12" method="post" action="config/proses_login.php" id="login">
                   <div class="row">
                     <div class="input-field col s12">
@@ -120,7 +120,7 @@
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">lock_outline</i>
-                      <input id="password" type="password" required class="validate" autocomplete="off" name="pass">
+                      <input id="password" type="password" required class="validate" autocomplete="off" name="password">
                       <label for="password">Password</label>
                     </div>
                   </div>

@@ -211,7 +211,7 @@ if (isset($_SESSION['emailusr'])) {
                     <span class="teal-text text-lighten-5">from yesterday</span>
                   </p>
                 </div>
-                
+
               </div>
             </div>
             <div class="col s12 m6 l3">
@@ -370,7 +370,7 @@ if (isset($_SESSION['emailusr'])) {
           </div>
         </div>
         <!--card widgets end-->
-        
+
         <!--work collections start-->
         <div id="work-collections">
           <div class="row">
@@ -507,7 +507,7 @@ if (isset($_SESSION['emailusr'])) {
           </div>
         </div>
         <!--work collections end-->
-        
+
         <!-- //////////////////////////////////////////////////////////////////////////// -->
       </div>
       <!--end container-->
@@ -537,5 +537,5 @@ if (isset($_SESSION['emailusr'])) {
 </html>
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

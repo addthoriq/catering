@@ -3,10 +3,10 @@ session_start();
 include 'koneksi.php';
 
 //on register.php
+$email 	= $_POST['email'];
+$pass 	= md5($_POST['password']);
 $nama	  = $_POST['nama'];
-$email	= $_POST['email'];
 $hp     = $_POST['hp'];
-$pass	  = md5($_POST['pass']);
 // $alamat =
 
 //on databases
@@ -25,10 +25,6 @@ if ($jkl==1) {
 $skl  = "INSERT INTO user (nama, hp, email, jkl, password, foto, status, tanggal, role_id) VALUES ('$nama', '$hp', '$email', $jkl, '$pass', '$gambar', $stt, '$tgl', $role)";
 
 mysqli_query($konek, $skl);
-
-
-$email 	= $_POST['email'];
-$pass 	= md5($_POST['pass']);
 
 $sql1 	= "SELECT * FROM op WHERE email = '$email' AND password = '$pass'";
 $qry1	= mysqli_query($konek, $sql1);

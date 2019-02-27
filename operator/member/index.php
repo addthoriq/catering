@@ -109,7 +109,7 @@ if (isset($_SESSION['emailop'])) {
                       ?>
                       <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $row['nama']?></td>                   
+                        <td><?= $row['nama']?></td>
                         <td><?= $row['hp']?></td>
                         <td><?= $row['email'] ?></td>
                         <td><?= status($row['status']) ?></td>
@@ -170,5 +170,5 @@ if (isset($_SESSION['emailop'])) {
 
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

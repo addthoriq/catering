@@ -2,10 +2,10 @@
 include 'koneksi.php';
 
 //on register.php
-$namargs	  = $_POST['nama'];
-$emailrgs	= $_POST['email'];
+$nama	  = $_POST['nama'];
+$emailmbr	= $_POST['emailmbr'];
 $hp     = $_POST['hp'];
-$pass	  = md5($_POST['password']);
+$passmbr	  = md5($_POST['password']);
 // $alamat =
 
 //on databases
@@ -21,8 +21,7 @@ if ($jkl==1) {
   $gambar = "female.png";
 };
 
-$sql  = "INSERT INTO user (nama, hp, email, jkl, password, foto, status, tanggal, role_id) VALUES ('$namargs', '$hp', '$emailrgs', $jkl, '$pass', '$gambar', $stt, '$tgl', $role)";
+$skl  = "INSERT INTO user (nama, hp, email, jkl, password, foto, status, tanggal, role_id) VALUES ('$nama', '$hp', '$emailmbr', $jkl, '$pass', '$gambar', $stt, '$tgl', $role)";
 
-mysqli_query($konek, $sql);
-exit();
-// header('location:../member/index.php');
+mysqli_query($konek, $skl);
+header('location: ../config/proses_login.php');

@@ -65,7 +65,7 @@ if (isset($_SESSION['emailusr'])) {
             <div id="striped-table">
               <div class="row">
                 <div class="col s12">
-                  <h4 class="header"><a class="waves-effect" href="index.php">Beranda</a></h4>
+                  <h4 class="header"><a class="waves-effect" href="../index.php">Beranda</a></h4>
                 </div>
               </div>
             </div>
@@ -184,5 +184,5 @@ if (isset($_SESSION['emailusr'])) {
 
 <?php
 }else{
-  echo "Anda Belum Login, silahkan Login <a href='../index.php'>Di sini</a>";
+  echo "Anda Belum Login, silahkan Login <a href='http://localhost/ilma/member.php'>Di sini</a>";
 }

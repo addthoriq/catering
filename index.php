@@ -71,11 +71,19 @@
             </div>
           </div>
         </div>
+        <?php
+        include 'config/koneksi.php';
+
+        $sql    = "SELECT * FROM menuacr";
+        $res    = mysqli_query($konek, $sql);
+        $row    = mysqli_fetch_assoc($res);
+        $ava  = "http://localhost/ilma/img/".$row['foto'];
+        ?>
           <div class="row owl-carousel owl-theme">
             <div class="col s12 m12 item gradient-shadow">
               <div class="card">
                 <div class="card-image">
-                  <img src="gambar/opac_bakso.jpg" alt="sample">
+                  <img src="<?= $ava ?>" alt="sample">
                   <span class="card-title">Bakso</span>
                 </div>
                 <div class="card-content">
@@ -89,7 +97,7 @@
             <div class="col s12 m12 item gradient-shadow">
               <div class="card">
                 <div class="card-image">
-                  <img src="gambar/opac_soto.jpg" alt="sample">
+                  <img src="<?= $ava ?>" alt="sample">
                   <span class="card-title">Soto Banjar</span>
                 </div>
                 <div class="card-content">

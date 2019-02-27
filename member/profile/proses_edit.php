@@ -5,12 +5,12 @@ include '../../config/koneksi.php';
 $id 		= $_POST['id'];
 $nama		= $_POST['nama'];
 $email	= $_POST['email'];
-$pass		= md5($_POST['pass']);
 $hp 		= $_POST['hp'];
 $alamat = $_POST['alamat'];
 $jkl 		= $_SESSION['jklusr'];
 $stt 		= 1;
 $role		= $_SESSION['roleusr'];
+$pass1 	= $_POST['pass'];
 
 $skl 			= "SELECT * FROM user WHERE id = '$id'";
 $qrr 			= mysqli_query($konek, $skl);
@@ -35,7 +35,7 @@ if (empty($nama_gambar)) {
 }
 
 //Percabangan jika mengubah sandi atau tidak
-if (empty($pass)) {
+if (empty($pass1)) {
 	$pass 		= $sandi;
 } else {
 	$pass		= md5($_POST['pass']);
@@ -44,5 +44,4 @@ if (empty($pass)) {
 
 $sql	= "UPDATE user SET nama = '$nama', alamat = '$alamat', hp = '$hp', email = '$email', jkl = '$jkl', password = '$pass', foto = '$gambar', status = $stt, tanggal = '$tgl', role_id = '$role' WHERE id = '$id'";
 mysqli_query($konek, $sql);
-exit();
-// header('location: index.php?id='.$id);
+header('location: index.php?id='.$id);
