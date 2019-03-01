@@ -79,7 +79,18 @@
                 <div class="card-panel">
                   <h4 class="header2">Pesan</h4>
                   <div class="row">
-                    <form class="col s12" method="post" action="proses_pesan.php">
+                    <form class="col s12" method="post" action="proses_pemesanan.php">
+                      <?php
+                      include '../../config/koneksi.php';
+
+                      $sql    = "SELECT * FROM menuacr";
+                      $res    = mysqli_query($konek, $sql);
+                      $row    = mysqli_fetch_assoc($res);
+
+                      function harga($n){
+                        $rupiah = "Rp. ".number_format($n,0,",",".").",-";
+                      }
+                      ?>
                       <!-- JCart -->
                       <div class="row">
                         <div class="input-field col s9">
@@ -97,7 +108,7 @@
                       </div>
                       <div class="row">
                         <div class="input-field col s8">
-                          <input type="text" id="date" class="datepicker">
+                          <input type="text" class="datepicker">
                           <label for="date">Tanggal Mulai</label>
                           <small class="grey-text">Sampai
                             <span class="until"></span>
@@ -121,12 +132,13 @@
                             <h6>Total</h6>
                           </div>
                           <div class="col s8" style="text-align: right;">
-                            <h6>Rp <span class="total"></span></h6>
+                            <h5>Rp <span class="totalFormat"></span>,-</h5>
                             <p class="grey-text" style="text-align: right;">
                               <small>
                                 Rp <span class="cost"></span> x <span class="amount"></span> porsi x <span class="duration"></span> hari
                               </small>
                             </p>
+                            <input type="text" name="harga" class="total" hidden>
                           </div>
                         </div>
                       </div>
@@ -329,6 +341,8 @@
     <!--custom-script.js - Add your own theme custom JS-->
     <script type="text/javascript" src="../adminmt/js/custom-script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
     <script type="text/javascript">
       $('.owl-carousel').owlCarousel({
           margin:10,
@@ -369,18 +383,21 @@
          var num     = parseInt(val) - 50;
 
          if (num > 0) {
-           amount.val(num + " Box");
+           amount.val(num + " Porsi");
          }
          countAll();
        });
 
        countAll = function(){
-         var cost      = 18000;
-         var amount    = $('#amount').val().replace(' Box', '');
+         var cost      = <?= $row['harga'] ?>;
+         var amount    = $('#amount').val().replace(' Porsi', '');
          var duration  = $('#duration').val();
          var total     = cost * parseInt(amount) * parseInt(duration);
+         var totalFormat = numeral(total).format('0,0');
 
-         $('.total').text(total);
+         // $('.until').
+         $('.total').val(total);
+         $('.totalFormat').text(totalFormat);
          $('.cost').text(cost);
          $('.amount').text(amount);
          $('.duration').text(duration);
